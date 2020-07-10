@@ -186,13 +186,13 @@ func (s *stream) do() bool {
 	})
 	if err != nil {
 		s.log("ERR: %s", err)
-		return true
+		//return true
 	}
 
 	// OPTIONS is not available in some cameras
 	if res.StatusCode != gortsplib.StatusOK && res.StatusCode != gortsplib.StatusNotFound {
 		s.log("ERR: OPTIONS returned code %d (%s)", res.StatusCode, res.StatusMessage)
-		return true
+		//return true
 	}
 
 	res, err = conn.WriteRequest(&gortsplib.Request{
